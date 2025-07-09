@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Links</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+
+    /* Menu lateral */
+    .sidebar {
+      width: 60px;
+      background-color: #263646;
+      border-right: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 15px;
+    }
+
+    .sidebar img {
+      width: 30px;
+      height: 30px;
+      margin: 20px 0;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .sidebar img:hover {
+      transform: scale(1.2);
+    }
+	
+	
+	/* icone lateral */
+	.sidebar {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  background-color: #2c3e50;
+	  padding-top: 10px;
+	}
+
+	.sidebar button {
+	  background: none;
+	  border: none;
+	  padding: 4px;
+	  margin: 2px 0; /* Menor distância entre botões */
+	  cursor: pointer;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  color: white;
+	  font-size: 12px;
+	}
+
+	.sidebar button img {
+	  width: 30px;
+	  height: 30px;
+	  transition: transform 0.3s ease;
+	}
+
+	.sidebar button:hover img {
+	  transform: scale(1.2);
+	}
+
+
+
+
+
+    /* Conteúdo principal */
+    .main-content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    /* Título */
+    h1 {
+      margin-bottom: 20px;
+      color: #1e90ff;
+    }
+	
+	h2 {
+      margin-bottom: 20px;
+      color: #1E90FF;
+    }
+
+    /* Container dos cards */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    /* Estilo do card */
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 180px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.10);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      background-color: #87CEEB;
+    }
+
+    .card b {
+      font-size: 16px;
+    }
+
+    .section {
+      display: none;
+    }
+	
+	.sidebar button {
+	  background: none;
+	  border: none;
+	  color: white;
+	  text-align: center;
+	  margin: 10px 0;
+	  cursor: pointer;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+}
+
+.sidebar button img {
+  margin-bottom: 5px;
+}
+
+
+  </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body>
+
+  <!-- Menu lateral -->
+  <div class="sidebar">
+		<button onclick="showSection('cnj')" title="Conselho Nacional de Justiça (CNJ)">
+		  <img src="Imagens/cnj.png" alt="CNJ" />
+		</button>
+
+		<button onclick="showSection('tribunal')" title="Tribunal de Justiça do Acre">
+			<img src="Imagens/social-equality.png" alt="Tribunal">
+			<span>TJAC</span>
+		</button>
+		
+		
+		<button onclick="showSection('pessoal')" title="Minhas coisas Pessoais">
+			<img src="Imagens/user.png" alt="pessoal">
+			<span>Pessoal</span>
+		</button>
+		
+		<button onclick="showSection('cursos')" title="Meus cursos">
+			<img src="Imagens/curriculum.png" alt="cursos">
+			<span>Cursos</span>
+		</button>
+	  
+		<!-- Botão -->
+		<button onclick="showSection('agenda')">
+			<img src="Imagens/clock.png" alt="Icon6">
+			<span>Agenda</span>
+		</button>
+
+  	</div>
+
+  <!-- Conteúdo principal -->
+  <div class="main-content">
+		
+
+
+		<!-- Seção inicial -->
+		<div id="globo" class="section" style="text-align: center; padding: 40px;">
+		  <h1>Olá Rodrigo, Bem-vindo! 🌎</h1>
+		  <img src="Imagens/estatistica.webp" alt="Globo girando" style="width: 700px; height: 450px; margin-top: 20px;">
+		  <p style="margin-top: 20px; font-size: 18px;">Aqui está todos os seus links do dia a dia de forma interativa!</p>
+		</div>
+
+
+
+
+    <!-- Seção CNJ -->
+	
+		<div id="cnj" class="section">	
+			<h2>Links CNJ</h2>
+			
+			<h3>Meus Links de Pesquisas 🪶</h3>
+			<div class="search-box" style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px;">
+				<input class="searchInput" data-target="cardContainerCNJ" type="text" placeholder="Pesquisar links..." style="padding: 8px;">
+				<img src="Imagens/search.png" alt="Pesquisar" style="width: 20px; height: 20px;">
+			</div>
+			
+			<br>
+
+			  <div class="card-container"  id="cardContainerCNJ">
+				<!-- Card 1: Estatistica do CNJ -->
+				<a href="https://justica-em-numeros.cnj.jus.br/painel-estatisticas/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade"> 
+					<b>Painel Estatística CNJ 📊</b>
+				  </div>
+				</a>
+
+				<!-- Card 1: Metas do CNJ -->
+				<a href="https://justica-em-numeros.cnj.jus.br/painel-metas/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade"> 
+					<b>Painel de Metas CNJ 📊</b>
+				  </div>
+				</a>
+				
+				<!-- Card 1: glossario Metas do CNJ -->
+				<a href="https://www.cnj.jus.br/wp-content/uploads/2025/05/glossario-metas-nacionais-do-poder-judiciario-2025-justica-estadual-versao-3-1.pdf" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade"> 
+					<b>Glossário de Metas CNJ 📙</b>
+				  </div>
+				</a>
+				
+				<!-- Card 1: gestão Metas do CNJ -->
+				<a href="https://www.cnj.jus.br/gestao-estrategica-e-planejamento/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade"> 
+					<b>Gestão Estratégica CNJ 📇</b>
+				  </div>
+				</a>
+				
+				
+				<!-- Card 2: tabelas processuais do CNJ -->
+				<a href="https://www.cnj.jus.br/sgt/consulta_publica_classes.php" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade">
+					<b>Tabela processual CNJ 📜</b>
+				  </div>
+				  </a>
+				  <!-- Card 3: qualidade dos dados do CNJ -->
+				<a href="https://justica-em-numeros.cnj.jus.br/painel-qualidade-de-dados/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade">
+					<b>Qualidade dos Dados Carga CNJ 🎲</b>
+				  </div>
+				  </a>
+				  <!-- Card 4: Corporativo CNJ -->
+				<a href="https://corporativo.cnj.jus.br/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade">
+					<b>Corporativo CNJ 🔒</b>
+				  </div>
+				  </a>
+				  <!-- Card 5: consulta datajus CNJ -->
+				<a href="https://consulta-datajud.cnj.jus.br/login" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade">
+					<b>Consulta DATAJUD CNJ 🔍</b>
+				  </div>
+				  </a>
+				<!-- Card 6: pontuação CNJ -->
+				<a href="https://paineisanalytics.cnj.jus.br/single/?appid=b532a1c7-3028-4041-80e2-9620527bd3fa&sheet=fb006575-35ca-4ccd-928c-368edd2045ba&theme=cnj_theme&opt=ctxmenu&select=Ramo%20de%20justi%C3%A7a,Estadual&select=Ano,&select=tribunal_proces" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade">
+					<b>Pontuação Prêmio 2025 CNJ 🥇</b>
+				  </div>
+				  </a>
+
+				<!-- Card 6: pontuação CNJ -->
+				<a href="https://www.cnj.jus.br/pesquisas-judiciarias/premio-cnj-de-qualidade/dados-parciais-da-avaliacao/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade">
+					<b>Pontuação Prêmio 2 2025 CNJ 🥇</b>
+				  </div>
+				  </a>
+				  <!-- Card 7: inconsistencia datajud CNJ -->
+				<a href="https://paineisanalytics.cnj.jus.br/single/?appid=b532a1c7-3028-4041-80e2-9620527bd3fa&sheet=c99b3e24-4cce-4666-8ca5-09b0ad7b8b9a&theme=cnj_theme&opt=ctxmenu" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade">
+					<b>Painel de Saneamento CNJ 🎲</b>
+				  </div>
+				  </a>
+				  <!-- Card 8: Resultado Prêmio 2024 CNJ -->
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiNDhiNTc4ODQtMzM1ZS00YmJhLTlmODQtNjlmMzlmNGI1MDc4IiwidCI6ImFkOTE5MGU2LWM0NWQtNDYwMC1iYzVjLWVjYTU1NGNjZjQ5NyIsImMiOjJ9&pageName=ReportSection624cdbfbbf5b55a1025c" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Litigiosidade">
+					<b>Resultado Prêmio 2024 CNJ 🥇</b>
+				  </div>
+				  </a>
+				
+				
+				
+				<a href="https://www.cnj.jus.br/tecnologia-da-informacao-e-comunicacao/justica-4-0/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Justiça 4.0 CNJ"> 
+					<b>Justiça 4.0 CNJ ⚖️</b>
+				  </div>
+				</a>
+				
+				<a href="https://www.cnj.jus.br/programas-e-acoes/estatistica/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Justiça 4.0 CNJ"> 
+					<b>Vários Paineis CNJ ⚖️</b>
+				  </div>
+				</a>
+				
+				
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjUxMDc0MjItYTA4NS00MDkwLWE3N2QtZWEwZGI3NjBkNjdmIiwidCI6ImFkOTE5MGU2LWM0NWQtNDYwMC1iYzVjLWVjYTU1NGNjZjQ5NyIsImMiOjJ9" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Justiça 4.0 CNJ"> 
+					<b>Socioambiental CNJ ⚖️</b>
+				  </div>
+				</a>
+				
+				
+				<a href="https://www.cnj.jus.br/programas-e-acoes/sustentabilidade/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/cnj.png" alt="Justiça 4.0 CNJ"> 
+					<b>Sustentabilidade – Meio Ambiente ⚖️</b>
+				  </div>
+				</a>
+				
+				
+				
+			  </div>
+		</div>
+		
+
+    <!-- Seção Tribunal -->
+		<div id="tribunal" class="section">
+			<h2>Links Tribunal</h2>
+			
+			<h3>Meus Links de Pesquisas 🪶</h3>
+			<div class="search-box" style="display: flex; align-items: center; gap: 8px;">
+			  <input class="searchInput" data-target="cardContainerTJ" type="text" placeholder="Pesquisar links..." style="padding: 8px;">
+			  <img src="Imagens/search.png" alt="Pesquisar" style="width: 20px; height: 20px;">
+			</div>
+		<br>
+		<br>
+		  
+		  	<div class="card-container" id="cardContainerTJ">
+				<!-- Card 13: power BI -->
+				<a href="https://app.powerbi.com/home?experience=power-bi" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/data.png" alt="power bi">
+					  <b>Acesso ao Power BI</b>
+					</div>
+				  </a>
+				<!-- Card 13: power BI -->
+				<a href="https://estatistica.tjac.jus.br/index.html" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/dashboard.png" alt="power bi TJ">
+					  <b>Paineis BI Alvank tjac</b>
+					</div>
+				</a>
+
+				<!-- Card 13: power BI premio -->
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiNzVlMzJkN2ItOGFhMC00ZjJmLWEwOTMtOWVmY2U0YjlhYTA2IiwidCI6ImNjMzUyYTVjLTExNDctNDQ4YS1iODI4LWJlYTg3YTc3MDY3YyJ9" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/speedometer.png" alt="power bi TJ">
+					  <b>Painel Prêmio de Qualidade 📊</b>
+					</div>
+				</a>
+				<!-- Card 13: planilha google premio -->
+				<a href="https://docs.google.com/spreadsheets/d/1r8rML2Zofm6v3kDWxFsfJLaQuGzcltzLEcR8ZMTRzNU/edit?gid=724014800#gid=724014800" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/excel.png" alt="power bi TJ">
+					  <b>Planilha Prêmio de Qualidade 📕</b>
+					</div>
+				</a>
+				<!-- Card 13: Portaria premio -->
+				<a href="https://atos.cnj.jus.br/atos/detalhar/5880#:~:text=III%20%E2%80%93%20Pr%C3%AAmio%20CNJ%20de%20Qualidade%20Ouro%3A" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/pdf.png" alt="power bi TJ">
+					  <b>Portaria Prêmio de Qualidade 📘</b>
+					</div>
+				</a>
+				
+
+				<!-- Card 12: Sei -->
+				<a href="https://sei.tjac.jus.br/sip/login.php?sigla_orgao_sistema=TJAC&sigla_sistema=SEI" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/sei.png" alt="Acesso ao SEI">
+					<b>Acesso ao SEI</b>
+				  </div>
+				</a>
+				  
+				<!-- Card 13: Estrutura -->
+				<a href="file:///G:/Meu%20Drive/Documentos/TJAC/Estrutura%20organizacional%20TJAC.pdf" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/hierarchical.png" alt="Estrutura">
+					<b>Estrutura TJAC</b>
+				  </div>
+				  </a>
+			<!-- Card 13: cloud -->
+				<a href="https://cloud.tjac.jus.br/index.php/apps/files/files" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens\cloud-storage.png" alt="cloud TJ">
+					  <b>Cloud TJ</b>
+					</div>
+				</a>
+
+
+			<!-- Card 11: SAJ-Insigths PG -->
+				<a href="https://identidade-saj.tjac.jus.br/auth/realms/SAJ/protocol/openid-connect/auth?client_id=saj&redirect_uri=https%3A%2F%2Festatisticas-saj.tjac.jus.br%2Fartefatos%2Fpaineis&state=1ea07bce-b8b3-449c-8855-c623774e2ed3&response_mode=fragment&response_type=code%20id_token%20token&scope=openid&nonce=55412319-2e86-4938-ad36-1c3b56086c7e" target="_blank" style="text-decoration: none; color: inherit;">
+				<div class="card">
+					<img src="Imagens/saj_1.png" alt="SAJ"> 
+					<b>SAJ-Insights PG</b>
+				</div>
+				</a>
+			 <!-- Card 11: SAJ-Insigths SG -->
+				<a href="https://identidade-saj.tjac.jus.br/auth/realms/SAJSG/protocol/openid-connect/auth?client_id=saj-sg&redirect_uri=https%3A%2F%2Festatisticas-saj-sg.tjac.jus.br%2Fartefatos%2Fpaineis&state=541d639c-682d-46e8-82e7-3d4a7a69d633&response_mode=fragment&response_type=code%20id_token%20token&scope=openid&nonce=d23edfb7-1a40-4d95-814b-c24f6f8487b8" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/saj_1.png" alt="Litigiosidade">
+					<b>SAJ-Insigths SG 📈</b>
+				  </div>
+				  </a>
+				  <!-- Card 12: Qlik sense -->
+				<a href="https://qlik.tjac.jus.br/internal_forms_authentication/?targetId=5323c7cd-d625-400b-9cd9-39abedc87dfd" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/qlik.png" alt="Litigiosidade">
+					<b>Qlik Sense Produção</b>
+				  </div>
+				  </a>
+				<!-- Card 12: Qlik sense -->
+				<a href="https://paineis.tjac.jus.br/internal_forms_authentication/?targetId=e3eb8de4-bba1-40e2-bc91-7f2f6710812b" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/qlik.png" alt="Litigiosidade">
+					<b>Qlik Sense Paineis</b>
+				  </div>
+				  </a>
+				  
+				
+				  
+				<!-- Card 13: SEEU -->
+				<a href="https://seeu.pje.jus.br/seeu/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/seeu.png" alt="SEEU">
+					<b>Sistema SEEU</b>
+				  </div>
+				</a>
+				<!-- Card 13: SEEU -->
+				<a href="https://coger.tjac.jus.br/metabase/public/question/81963176-eff1-43a8-8f21-e60d41615018?inicio=&fim=" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/seeu.png" alt="SEEU">
+					  <b>Distribuição SEEU</b>
+					</div>
+				  </a>
+				
+
+				<!-- Card 13: wordpress -->
+				<a href="https://www.tjac.jus.br/wp-login.php?redirect_to=https%3A%2F%2Fwww.tjac.jus.br%2Fwp-admin%2Fpost.php%3Fpost%3D211065%26action%3Dedit&reauth=1" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens\script.png" alt="Wordpress TJ">
+					  <b>Wordpress TJ</b>
+					</div>
+				</a>
+				
+				<!-- Card 13: chat google -->
+				<a href="https://mail.google.com/chat/u/0/#chat/home" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens\chat (1).png" alt="chat google">
+					  <b>Google Chat</b>
+					</div>
+				</a>
+				  
+				  
+				  
+				  
+		  	</div>
+		</div>
+	
+	
+		<!-- Container pessoal -->
+		<div id="pessoal" class="section" style="margin-top: 20px; display: none;">
+				<h2>Meus links pessoais</h2>
+				<br>
+
+
+			<div class="card-container" id="cardContainerPessoal">
+
+				<!-- Card 3: Watsap -->
+				<a href="https://web.whatsapp.com/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/Watsap.png" alt="mensseger">
+					<b>Watsap 📞</b>
+				  </div>
+				  </a>	
+				  
+				<!-- Card 3: juros -->
+				<a href="https://www3.bcb.gov.br/CALCIDADAO/publico/exibirFormFinanciamentoPrestacoesFixas.do?method=exibirFormFinanciamentoPrestacoesFixas" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/money.png" alt="juros">
+					<b>Calculadora de juros 💲</b>
+				  </div>
+				  </a>
+				  
+				<!-- Card 3: juros -->
+				<a href="https://infograficos.valor.globo.com/calculadoras/calculadora-de-renda-fixa.html" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/earning.png" alt="juros">
+					<b>Calculadora de investimento 💵</b>
+				  </div>
+				</a>
+
+				<!-- Card 3: juros -->
+				<a href="https://investnews.com.br/ferramentas/simuladores/simulador-de-investimento/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/earning.png" alt="juros">
+					<b>Calculadora InvestNews 💶</b>
+				  </div>
+				</a>
+
+
+				<!-- Card 3: juros -->
+				<a href="https://www.idinheiro.com.br/calculadoras/calculadora-de-investimentos/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/earning.png" alt="juros">
+					<b>Calculadora iDinheiro 💰</b>
+				  </div>
+				</a>
+				
+				<!-- Card 3: Hacker -->
+				<a href="https://hackertyper.net/#" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/script.png" alt="juros">
+					<b>Hacker Typer</b>
+				  </div>
+				</a>
+
+			
+			</div>
+				
+		</div>
+			
+		
+		<!-- Container dos cursos -->
+		
+		<div id="cursos" class="section" style="margin-top: 20px; display: none;">
+				<h2>Meus links de cursos e concursos</h2>
+								
+			<br>
+
+			<div class="card-container" id="cardContainerTJ">
+			   <!-- Card 13: Icones -->
+				<a href="https://www.flaticon.com/" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/hierarchical.png" alt="Flaticon">
+					<b>Flaticon - ícones📌</b>
+				  </div>
+				  </a>
+				  
+				<!-- Card 13: r avançado -->
+				<a href="https://omegadataacademy.com.br/login/?redirect_to=https%3A%2F%2Fomegadataacademy.com.br%2Fwp-admin%2F" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/r.png" alt="Flaticon">
+					<b>R avançado CNJ🎲</b>
+				  </div>
+				  </a>
+			   
+				<!-- Card 13: r avançado -->
+				<a href="https://rstudio.github.io/flexdashboard/articles/theme.html" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/rstudio.png" alt="Flaticon">
+					<b>R Flexdashboard📈</b>
+				  </div>
+				 </a>
+				  
+				 <!-- Card 13: r avançado -->
+				<a href="http://sillasgonzaga.com/material/cdr/rmarkdown" target="_blank" style="text-decoration: none; color: inherit;">
+				  <div class="card">
+					<img src="Imagens/rmarkdown.png" alt="Flaticon">
+					<b>R Markdown 📊</b>
+				  </div>
+				 </a>
+			   
+			   	<!-- Card 13: power BI -->
+				<a href="https://colab.research.google.com/drive/1VYATnXfGQyeE3RBLJ1jNYBZb1LX7Xhr9" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/script.png" alt="colab">
+					  <b>Google Colab - Phyton</b>
+					</div>
+				</a>
+			   
+				<!-- Card 13: power BI -->
+				<a href="https://www.gov.br/governodigital/pt-br/capacitacao/capacita-gov-br/ciencia-de-dados" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/online-lesson.png" alt="colab">
+					  <b>Ciência de Dados Gov</b>
+					</div>
+				</a>
+				
+				<!-- Card 13: power BI -->
+				<a href="https://www.gov.br/governodigital/pt-br/capacitacao/capacita-gov-br/ciencia-de-dados" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/online-course.png" alt="colab">
+					  <b>Pós em Ciência de Dados</b>
+					</div>
+				</a>
+				
+				<!-- Card 13: power BI -->
+				<a href="https://www.gov.br/governodigital/pt-br/capacitacao/capacita-gov-br/ciencia-de-dados" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/blended-learning.png" alt="colab">
+					  <b>Pós em Estatística Aplicada</b>
+					</div>
+				</a>
+				
+				<!-- Card 13: power BI -->
+				<a href="https://www.gov.br/governodigital/pt-br/capacitacao/capacita-gov-br/ciencia-de-dados" target="_blank" style="text-decoration: none; color: inherit;">
+					<div class="card">
+					  <img src="Imagens/diploma.png" alt="colab">
+					  <b>Meus Certificados</b>
+					</div>
+				</a>
+				
+				
+			   
+			</div>
+		</div>	
+		
+		
+	
+		<!-- Container da agenda -->
+			<div id="agenda" class="section" style="margin-top: 20px; display: none;">
+				<h2>Meu Calendário</h2>
+				
+					<iframe src="https://calendar.google.com/calendar/embed?src=SEU_EMAIL%40gmail.com&ctz=America%2FSao_Paulo" 
+					  style="border: 0" width="100%" height="500" frameborder="0" scrolling="no">
+					</iframe>
+			   
+			</div>
+
+
+  </div>
+  
+  
+  
+
+  <!-- JavaScript para alternar as seções -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(sec => sec.style.display = 'none'); // esconde todas
+      document.getElementById(sectionId).style.display = 'block'; // mostra a selecionada
+    }
+
+    // Mostrar CNJ por padrão
+    showSection('globo');
+	
+	
+	
+	// 🔍 Filtro de busca funcional para cada seção
+	document.querySelectorAll('.searchInput').forEach(input => {
+    input.addEventListener('input', function () {
+      const query = this.value.toLowerCase();
+      const targetId = this.getAttribute('data-target');
+      const cards = document.querySelectorAll(`#${targetId} a`);
+
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? '' : 'none';
+      });
+    });
+  });
+  
+  
+
+
+
+  </script>
+
+
+
+
+</body>
+</html>
